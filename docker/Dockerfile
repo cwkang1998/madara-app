@@ -14,7 +14,7 @@ RUN npm install yarn -g
 WORKDIR /apps
 COPY . .
 
-RUN yarn && NODE_ENV=production yarn build:www
+RUN yarn install --immutable && NODE_ENV=production yarn build:www
 
 # ===========================================================
 FROM nginx:stable-alpine
